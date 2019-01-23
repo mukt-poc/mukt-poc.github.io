@@ -9,11 +9,13 @@
         };
 
         var onloadCallback = function() {
-          grecaptcha.render('submit', {
+          widgetId = grecaptcha.render('avlfare', {
             'sitekey' : '6LdY-IUUAAAAACOW46urZoIjA7nzPrDToM0KSnfT',
             'callback' : onSubmit
           });
         };
+		
+	
     </script>
     
     <!--<script src="recaptcha__en.js"></script>-->
@@ -29,19 +31,17 @@
 </form>
 	
  <script>
-		 function formSubmit(token) {
-			 grecaptcha.execute(100000, {
+		 function formSubmit() {
+			 grecaptcha.execute(widgetId, {
                             action: 'avlfare'
                         }).then(function(l) {
+				 console.log(l);
                            return this(l);                      
 			 })
 			 
 
 	}
 	 
-				function formResponse(response) {
-				  // submit the form which now includes a g-recaptcha-response input
-				}
   </script>
 
       
